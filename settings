@@ -1,0 +1,567 @@
+settings = {"link_type": "dedupe_only", 
+
+            "blocking_rules": ["l.est_id <> r.est_id and l.fn = r.fn and l.sn = r.sn and l.sex = r.sex and (ifnull(ifnull(l.mn, r.mn), 'abc123') = ifnull(ifnull(r.mn, l.mn),'abc123'))", 
+
+                               "l.est_id <> r.est_id and l.fn = r.mn and l.mn = r.fn and l.sn = r.sn and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.fn = r.sn and l.sn = r.fn and l.sex = r.sex and (ifnull(ifnull(l.mn, r.mn), 'abc123') = ifnull(ifnull(r.mn, l.mn),'abc123'))", 
+
+                               "l.est_id <> r.est_id and l.fn_metaphone_1 = r.fn_metaphone_1 and l.sn_metaphone_1 = r.sn_metaphone_1 and l.dob= r.dob and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.region = r.region and l.fn_init=r.fn_init and l.sn_init=r.sn_init and l.sex=r.sex and l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.pc_area = r.pc_area and l.fn = r.fn and l.sn = r.sn and l.mn = r.mn and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.la=r.la AND l.fn=r.fn AND l.sn_metaphone_1 =r.sn_metaphone_1 AND l.mn=r.mn AND l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.la=r.la AND l.sn=r.sn AND l.fn_metaphone_1 =r.fn_metaphone_1 AND l.mn=r.mn AND l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.SIC_g=r.SIC_g and l.fn_init = r.fn_init AND l.yradpc=r.yradpc AND l.year=r.year AND l.pc_area=r.pc_area", 
+
+                               "l.est_id <> r.est_id and l.SIC_g=r.SIC_g and l.sn_init = r.sn_init AND l.yradpc=r.yradpc AND l.year=r.year AND l.pc_area=r.pc_area", 
+
+                               "l.est_id <> r.est_id and l.fn_metaphone_2=r.fn_metaphone_2 AND l.sn_init=r.sn_init AND l.mn_init =r.mn_init AND l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.sn_metaphone_2=r.sn_metaphone_2 AND l.fn_init=r.fn_init AND l.mn_init =r.mn_init AND l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.sn_metaphone_1=r.sn_metaphone_1 AND l.pc_area=r.pc_area AND l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.fn_metaphone_1=r.fn_metaphone_1 AND l.pc_area=r.pc_area AND l.dob=r.dob", 
+
+                               "l.fn_init=r.fn_init and l.wkplpc=r.wkplpc and l.pc_area=r.pc_area and l.year=r.year", 
+
+                               "l.est_id <> r.est_id and l.sn_init=r.sn_init and l.wkplpc=r.wkplpc and l.pc_area=r.pc_area and l.year=r.year", 
+
+                               "l.est_id <> r.est_id and l.sn=r.sn and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.fn=r.fn and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.fn_metaphone_1= r.fn_metaphone_1 and l.mn=r.mn and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.sn_metaphone_1= r.sn_metaphone_1 and l.mn=r.mn and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.fn_metaphone_1= r.fn_metaphone_1 and l.pc_area=r.pc_area and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.sn_metaphone_1= r.sn_metaphone_1 and l.pc_area=r.pc_area and l.dob=r.dob and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.fn=r.fn and l.sn_lc = r.sn_lc and l.sex = r.sex and l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.sn=r.sn and l.fn_lc = r.fn_lc and l.sex = r.sex and l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.fn_2c=r.fn_2c and l.sn_init=r.sn_init and l.sex=r.sex and l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.sn_2c=r.sn_2c and l.fn_init=r.fn_init and l.sex=r.sex and l.dob=r.dob", 
+
+                               "l.est_id <> r.est_id and l.yradpc = r.yradpc and l.year= r.year and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.second_home_pc = r.second_home_pc and l.year= r.year and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.wkplpc = r.wkplpc and l.year= r.year and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.pc = r.pc and l.year= r.year and l.sex = r.sex", 
+
+                               "l.est_id <> r.est_id and l.pc = r.second_home_pc", 
+
+                               "l.est_id <> r.est_id and l.second_home_pc = r.pc", 
+
+                               "l.est_id <> r.est_id and l.pc = r.wkplpc", 
+
+                               "l.est_id <> r.est_id and l.wkplpc = r.pc", 
+
+                               "l.est_id <> r.est_id and l.pc = r.yradpc", 
+
+                               "l.est_id <> r.est_id and l.yradpc = r.pc", 
+
+                               "l.est_id <> r.est_id and l.yradpc=r.second_home_pc and l.year=r.year and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.second_home_pc = r.yradpc and l.year=r.year and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.wkplpc=r.yradpc and l.year=r.year and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.yradpc=r.wkplpc and l.year=r.year and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.second_home_pc=r.wkplpc and l.year=r.year and l.sex=r.sex", 
+
+                               "l.est_id <> r.est_id and l.wkplpc=r.second_home_pc and l.year=r.year and l.sex=r.sex"], 
+
+            "unique_id_column_name": "id", 
+
+            "source_dataset_column_name": 'source', 
+
+            "max_iterations": 0, 
+
+            "em_convergence": 0.01, 
+
+            "proportion_of_matches": 0.007/57917164, #0.0000000001207, if u take random pair \n", 
+
+            "retain_matching_columns": False, #retains comparison columns in output datasets\n", 
+
+            "retain_intermediate_calculation_columns": False, #retains m and u values assoicated with each of the comparison columns\n", 
+
+            "additional_columns_to_retain": ['response_id'], 
+
+            "comparison_columns":[{'case_expression': """case  
+
+                                                            when (fn_l is null or fn_r is null) then -1  
+
+                                                            when jaro_winkler_sim(fn_l, fn_r) >= 1.0 then 3  
+
+                                                            when jaro_winkler_sim(fn_l, fn_r) >= 0.88 OR (fn_l=mn_r AND mn_l=fn_r) OR (fn_l=sn_r and sn_l=fn_r) then 2  
+
+                                                            when 1 - ((levenshtein(fn_l,fn_r))/greatest(length(fn_l), length(fn_r))) >=0.401 then 1  
+
+                                                            else 0 end""", 
+
+                                    'custom_columns_used': ['sn', 'fn', 'mn'], 
+
+                                    'custom_name': 'fn', 
+
+                                    'fix_m_probabilities': True, 
+
+                                    'fix_u_probabilities': True, 
+
+                                    'm_probabilities': [0.0186045248757065, 
+
+                                                        0.0325545258061882, 
+
+                                                        0.13928568703787647, 
+
+                                                        0.7797619320097428], 
+
+                                    'num_levels': 4, 
+
+                                    'term_frequency_adjustments': True, 
+
+                                    'u_probabilities': [0.9726800176703585, 
+
+                                                        0.0244427572490779, 
+
+                                                        0.0372493176309475, 
+
+                                                        0.928373646189213]}, 
+
+                                   {'case_expression': """case  
+
+                                                             when (sn_l is null or sn_r is null) then -1  
+
+                                                             when jaro_winkler_sim(sn_l, sn_r) >= 1.0 then 3  
+
+                                                             when jaro_winkler_sim(sn_l, sn_r) >= 0.88 OR (fn_l=sn_r and sn_l=fn_r) OR (sn_l=mn_r and mn_l=sn_r) then 2  
+
+                                                             when 1-((levenshtein(sn_l,sn_r))/greatest(length(sn_l),length(sn_r))) >=0.401 then 1  
+
+                                                             else 0 end""", 
+
+                                    'custom_columns_used': ['sn', 'fn', 'mn'], 
+
+                                    'custom_name': 'sn', 
+
+                                    'fix_m_probabilities': True, 
+
+                                    'fix_u_probabilities': True, 
+
+                                    'm_probabilities': [0.00951066980217405, 
+
+                                                        0.00971646136829789, 
+
+                                                        0.0171388437838311, 
+
+                                                        0.963634025045696], 
+
+                                    'num_levels': 4, 
+
+                                    'term_frequency_adjustments': True, 
+
+                                    'u_probabilities': [0.9796129875189793, 
+
+                                                        0.01910968429936625, 
+
+                                                        0.0005885744230029367, 
+
+                                                        0.000688753758651498]}, 
+
+                                   {'case_expression': """case  
+
+                                                             when (mn_l is null or mn_r is null) then -1  
+
+                                                             when jaro_winkler_sim(mn_l, mn_r) >= 1.0 then 3  
+
+                                                             when jaro_winkler_sim(mn_l, mn_r) >= 0.88 OR (fn_l=mn_r and mn_l=fn_r) OR (sn_l=mn_r and mn_l=sn_r) then 2  
+
+                                                             when 1-((levenshtein(mn_l,mn_r))/greatest(length(mn_l),length(mn_r))) >=0.401 then 1  
+
+                                                             else 0 end""", 
+
+                                     'custom_columns_used': ['sn', 'fn', 'mn'], 
+
+                                     'custom_name': 'mn', 
+
+                                     'fix_m_probabilities': True, 
+
+                                     'fix_u_probabilities': True, 
+
+                                     'm_probabilities': [0.0216867458328062, 
+
+                                                         0.0117753051691533, 
+
+                                                         0.0562506107818847, 
+
+                                                         0.910287338216155], 
+
+                                     'num_levels': 4, 
+
+                                     'u_probabilities': [0.9673764415209868, 
+
+                                                         0.023553309554688078, 
+
+                                                         0.0034174655142704263, 
+
+                                                         0.005652783410054662]}, 
+
+                                   {'case_expression': """CASE 
+
+                                                            WHEN (cob_l is null OR cob_r is null) THEN -1  
+
+                                                            WHEN cob_l <> cob_r THEN 0  
+
+                                                            WHEN cob_l = cob_r and cob_l = "921" THEN 1  
+
+                                                            WHEN cob_l = cob_r and cob_l = "924" THEN 2  
+
+                                                            WHEN cob_l = cob_r and cob_l = "356" OR cob_l = "616" OR cob_l = "923" OR cob_l = "586" OR cob_l = "642" THEN 3  
+
+                                                            WHEN cob_l = cob_r and cob_l = "372" OR cob_l = "380" OR cob_l = "050" OR cob_l = "566" OR cob_l ="276" OR cob_l = "710" THEN 4  
+
+                                                            ELSE 5 END""", 
+
+                                    'custom_columns_used': ['cob'], 
+
+                                    'custom_name': 'cob', 
+
+                                    'fix_m_probabilities': True, 
+
+                                    'fix_u_probabilities': True, 
+
+                                    'm_probabilities': [0.011661389, 
+
+                                                        0.830714755, 
+
+                                                        0.052867555, 
+
+                                                        0.01935105, 
+
+                                                        0.016091771, 
+
+                                                        0.04951599], 
+
+                                    'num_levels': 6, 
+
+                                    'u_probabilities': [0.40619915272020446, 
+
+                                                        0.5881136297984376, 
+
+                                                        0.004917757287938561, 
+
+                                                        0.00048356586414695645, 
+
+                                                        0.0001356562244563936, 
+
+                                                        0.00015023810481598276]}, 
+
+                                    {'col_name': 'sex', 
+
+                                     'fix_m_probabilities': True, 
+
+                                     'fix_u_probabilities': True, 
+
+                                     'm_probabilities': [0.00183442437652277, 
+
+                                                         0.998165575623477], 
+
+                                     'num_levels': 2, 
+
+                                     'u_probabilities': [0.49964052846704604, 
+
+                                                         0.5003594715329539], 
+
+                                     "case_expression": """case  
+
+                                                             when (sex_l is null or sex_r is null) then -1  
+
+                                                             when sex_l = sex_r then 1  
+
+                                                             else 0 end"""}, 
+
+                                    {'case_expression': """CASE  
+
+                                                              WHEN resi_type_l = 1 AND resi_type_r = 1 THEN 1  
+
+                                                              WHEN (resi_type_l = 1 AND resi_type_r = 2) OR (resi_type_l= 2 AND resi_type_r = 1) THEN 2  
+
+                                                              ELSE 0 END """, 
+
+                                     'custom_columns_used': ['resi_type'], 
+
+                                     'custom_name': 'resi_type', 
+
+                                     'fix_m_probabilities': True, 
+
+                                     'fix_u_probabilities': True, 
+
+                                     'm_probabilities': [0.006401505, 
+
+                                                         0.849232802, 
+
+                                                         0.142326819], 
+
+                                     'num_levels': 3, 
+
+                                     'u_probabilities': [0.004160402176329181, 
+
+                                                         0.8751070477700945, 
+
+                                                         0.1207325500535763]}, 
+
+                                    {'case_expression': """CASE  
+
+                                                              WHEN (marstat_l is null OR marstat_r is null) THEN -1  
+
+                                                              WHEN marstat_l <> marstat_r THEN 0  
+
+                                                              WHEN marstat_l = marstat_r and marstat_l = '2' THEN 1  
+
+                                                              WHEN marstat_l = marstat_r and marstat_l = '1' THEN 2  
+
+                                                              WHEN marstat_l = marstat_r and marstat_l = '10' THEN 3  
+
+                                                              WHEN marstat_l = marstat_r and marstat_l = '14' THEN 4  
+
+                                                              ELSE 5 END """, 
+
+                                     'custom_columns_used': ['marstat'], 
+
+                                     'custom_name': 'marstat', 
+
+                                     'fix_m_probabilities': True, 
+
+                                     'fix_u_probabilities': True, 
+
+                                     'm_probabilities': [0.0385604862097321, 
+
+                                                         0.182943849256496, 
+
+                                                         0.680360287605473, 
+
+                                                         0.0432229742122951, 
+
+                                                         0.0372886460847945, 
+
+                                                         0.0176237566312083], 
+
+                                     'num_levels': 6, 
+
+                                     'u_probabilities': [0.5170584252042348, 
+
+                                                         0.05751730890886587, 
+
+                                                         0.42197120324197035, 
+
+                                                         0.0017055705684651933, 
+
+                                                         0.0014301339889875365, 
+
+                                                         0.00031735808747626387]}, 
+
+                                    {'case_expression': """CASE 
+
+                                                             WHEN (stud_l is null OR stud_r is null) THEN -1  
+
+                                                             WHEN (stud_l = 1 AND stud_r = 1) AND (age_l >= 18 AND age_r >= 18) THEN 2  
+
+                                                             WHEN stud_l = stud_r THEN 1  
+
+                                                             ELSE 0 END""", 
+
+                                     'custom_columns_used': ['stud', 'age'], 
+
+                                     'custom_name': 'stud', 
+
+                                     'fix_m_probabilities': True, 
+
+                                     'fix_u_probabilities': True, 
+
+                                     'm_probabilities': [0.022568758, 
+
+                                                         0.819200262, 
+
+                                                         0.153603929], 
+
+                                     'num_levels': 3, 
+
+                                     'u_probabilities': [0.6507576800147583, 
+
+                                                         0.34590175352026603, 
+
+                                                         0.0033405664649756514]}, 
+
+                                    {'custom_name': 'pc', 
+
+                                     'num_levels': 6, 
+
+                                     'custom_columns_used': ['pc','wkplpc','yradpc','second_home_pc','pc_area'], 
+
+                                     'case_expression':"""CASE 
+
+                                                              WHEN pc_l is null AND wkplpc_l is null AND second_home_pc_l is null AND yradpc_l is null  
+
+                                                              OR (pc_r is null AND wkplpc_r is null AND second_home_pc_r is null AND yradpc_r is null) THEN -1 
+
+                                                              WHEN (pc_l = pc_r AND wkplpc_l = wkplpc_r AND second_home_pc_l = second_home_pc_r AND yradpc_l = yradpc_r)  
+
+                                                              OR (pc_l = pc_r AND wkplpc_l = wkplpc_r AND second_home_pc_l = second_home_pc_r)  
+
+                                                              OR (pc_l = pc_r AND wkplpc_l = wkplpc_r AND yradpc_l = yradpc_r)  
+
+                                                              OR (wkplpc_l = wkplpc_r AND second_home_pc_l = second_home_pc_r AND yradpc_l = yradpc_r) THEN 5  
+
+                                                              WHEN (pc_l = pc_r AND wkplpc_l = wkplpc_r) OR (pc_l = pc_r AND second_home_pc_l = second_home_pc_r)  
+
+                                                              OR (pc_l = pc_r AND yradpc_l = yradpc_r) OR (yradpc_l = yradpc_r AND wkplpc_l = wkplpc_r) 
+
+                                                              OR (yradpc_l = yradpc_r AND second_home_pc_l = second_home_pc_r)  
+
+                                                              OR (wkplpc_l = wkplpc_r AND second_home_pc_l = second_home_pc_r) THEN 4  
+
+                                                              WHEN pc_l = pc_r OR second_home_pc_l = second_home_pc_r OR yradpc_l = yradpc_r THEN 3  
+
+                                                              WHEN (pc_l = wkplpc_r OR wkplpc_l = pc_r) OR (pc_l = second_home_pc_r OR second_home_pc_l = pc_r)  
+
+                                                              OR (wkplpc_l = yradpc_r OR wkplpc_r = yradpc_l) OR (wkplpc_l = second_home_pc_r OR second_home_pc_l = wkplpc_r)  
+
+                                                              OR (yradpc_l = second_home_pc_r OR second_home_pc_l = yradpc_r) OR (pc_l = yradpc_r OR yradpc_l = pc_r)  
+
+                                                              OR wkplpc_l = wkplpc_r THEN 2  
+
+                                                              WHEN pc_area_l = pc_area_r THEN 1  
+
+                                                              ELSE 0 END""", 
+
+                                      'fix_m_probabilities': True, 
+
+                                      'fix_u_probabilities': True, 
+
+                                      'm_probabilities': [0.035507835276143, 
+
+                                                          0.0484217605995253, 
+
+                                                          0.752431731829939, 
+
+                                                          0.0804026597233074, 
+
+                                                          0.0771096979308537, 
+
+                                                          0.00612631464023129], 
+
+                                       'u_probabilities': [0.9849681984357469, 
+
+                                                           0.015025485727504803, 
+
+                                                           3.142566923701315e-06, 
+
+                                                           3.077220541544955e-06, 
+
+                                                           9.50492831365237e-08, 
+
+                                                           9.999999990000001e-10]}, 
+
+                                       {'case_expression': """CASE 
+
+                                                                  WHEN SIC_g_l is null OR SIC_g_r is null THEN -1 
+
+                                                                  WHEN SIC_g_l <> SIC_g_r THEN 0 
+
+                                                                  WHEN SIC_g_l = 'G_RepairMotor' AND SIC_g_r = 'G_RepairMotor' THEN 1 
+
+                                                                  WHEN SIC_g_l = 'Q_HealthSocWork' AND SIC_g_r = 'Q_HealthSocWork' THEN 1 
+
+                                                                  WHEN SIC_g_l = 'I_AccomFood' AND SIC_g_r = 'I_AccomFood' THEN 2 
+
+                                                                  WHEN SIC_g_l = 'P_Edu' AND SIC_g_r = 'P_Edu' THEN 2 
+
+                                                                  WHEN SIC_g_l = 'O_PubAdminDefenceSocSec' AND SIC_g_r = 'O_PubAdminDefenceSocSec' THEN 2 
+
+                                                                  WHEN SIC_g_l = 'F_Construction' AND SIC_g_r = 'F_Construction' THEN 2 
+
+                                                                  WHEN SIC_g_l = 'C_Manufacturing' AND SIC_g_r = 'C_Manufacturing' THEN 2 
+
+                                                                  WHEN SIC_g_l = 'M_ProfSciTech' AND SIC_g_r = 'M_ProfSciTech' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'N_AdminSupp' AND SIC_g_r = 'N_AdminSupp' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'H_TranspStorage' AND SIC_g_r = 'H_TranspStorage' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'J_InfoCommu' AND SIC_g_r = 'J_InfoCommu' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'K_FinaInsur' AND SIC_g_r = 'K_FinaInsur' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'R_ArtEntrerRecr' AND SIC_g_r = 'R_ArtEntrerRecr' THEN 3 
+
+                                                                  WHEN SIC_g_l = 'S_Other' AND SIC_g_r = 'S_Other' THEN 3 
+
+                                                                  ELSE 4 
+
+                                                                  END""",                                        
+
+                                        'custom_columns_used': ['SIC_g'], 
+
+                                        'custom_name': 'sic', 
+
+                                        'fix_m_probabilities': True, 
+
+                                        'fix_u_probabilities': True, 
+
+                                        'm_probabilities': [0.217351444, 
+
+                                                            0.274860624, 
+
+                                                            0.332947908, 
+
+                                                            0.133710741, 
+
+                                                            0.01030076], 
+
+                                        'num_levels': 5, 
+
+                                        'u_probabilities': [0.9079293502553465, 
+
+                                                            0.0495970111301361, 
+
+                                                            0.03181027512093212, 
+
+                                                            0.010398940355252772, 
+
+                                                            0.0002644231383324215]}, 
+
+                                       {'col_name': 'dob', 
+
+                                        'fix_m_probabilities': True, 
+
+                                        'fix_u_probabilities': True, 
+
+                                        'm_probabilities': [0.0329641476386355, 
+
+                                                            0.967035852361364], 
+
+                                        'num_levels': 2, 
+
+                                        'u_probabilities': [0.9999726027000082, 
+
+                                                            2.739729999178081e-05], 
+
+                                        "case_expression": """case 
+
+                                                                when dob_l is null or dob_r is null then -1  
+
+                                                                when dob_l = dob_r then 1  
+
+                                                                else 0 end"""}]} 
